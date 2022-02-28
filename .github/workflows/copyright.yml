@@ -2,7 +2,7 @@ name: Copyright update
 
 on:
   schedule:
-    - cron: '00 09 28 02 *'
+    - cron: '20 10 28 02 *'
 jobs:
   Update-Copyright-Date:
     runs-on: ubuntu-latest
