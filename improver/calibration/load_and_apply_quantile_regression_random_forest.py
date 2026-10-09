@@ -257,24 +257,6 @@ class PrepareAndApplyQRF(PostProcessingPlugin):
             DataFrame containing the data from the cubes, with auxiliary coordinates
             included as columns.
         """
-        # if self.cycletime:
-        #     cycletime = pd.to_datetime(self.cycletime, format="%Y%m%dT%H%MZ")
-        # else:
-        #     cycletime = cube_inputs[0].coord("forecast_reference_time").points
-
-        # if self.forecast_period:
-        #     forecast_period = self.forecast_period
-        # else:
-        #     forecast_period = cube_inputs[0].coord("forecast_period").points
-
-        # # Update the forecast_reference_time and forecast_period to match those
-        # # provided, if they are provided.
-        # for cube in cube_inputs:
-        #     if "forecast_reference_tim" in [coord.name() for coord in cube.coords()]:
-        #         cube.coord("forecast_reference_time").points = cycletime
-        #     if "forecast_period" in [coord.name() for coord in cube.coords()]:
-        #         cube.coord("forecast_period").points = forecast_period
-
         # Convert the first cube to a DataFrame.
         df = as_data_frame(cube_inputs[0], add_aux_coords=True)
         df.reset_index(inplace=True)
